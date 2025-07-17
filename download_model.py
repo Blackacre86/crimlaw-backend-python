@@ -1,4 +1,3 @@
-# download_model.py
 from sentence_transformers import SentenceTransformer
 SentenceTransformer("BAAI/bge-small-en-v1.5")
-print("Model cached at build.")
+print("Model cached during build.")

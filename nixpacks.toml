@@ -1,7 +1,12 @@
-# nixpacks.toml  (full file)
-# ======================================
-[phases.download]
-cmds = ["python download_model.py"]
+# nixpacks.toml  – minimal & proven
+# ------------------------------------------------
+# Build phase: install deps then cache the model
+[phases.install]
+cmds = [
+  "pip install -r requirements.txt",
+  "python download_model.py"
+]
 
+# Start phase: ALWAYS run Uvicorn
 [start]
 cmd = "uvicorn main:app --host 0.0.0.0 --port ${PORT}"
