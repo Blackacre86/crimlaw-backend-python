@@ -5,6 +5,7 @@ pdfplumber==0.10.3
 PyPDF2==3.0.1
 llama-cloud==0.0.6
 sentence-transformers==2.2.2
+huggingface_hub==0.19.4
 supabase==2.0.0
 redis==5.0.1
 celery==5.3.4
