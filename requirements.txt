@@ -10,7 +10,6 @@ redis==5.0.1
 celery==5.3.4
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
-# ↓———— pin to the latest <0.25 so it satisfies both llama-cloud & supabase
-httpx==0.24.3
+httpx==0.24.1
 numpy==1.24.3
 scikit-learn==1.3.2
