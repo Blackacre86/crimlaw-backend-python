@@ -1,10 +1,9 @@
-providers = ["python"]
+# nixpacks.toml  — full replacement
+# ==================================
+# Phase 1: download model at build time
+[phases.download]
+cmds = ["python download_model.py"]
 
-[phases.setup]
-nixPkgs = ["python311", "gcc"]
-
-[phases.install]
-cmds = ["pip install -r requirements.txt"]
-
+# Phase 2: start FastAPI
 [start]
 cmd = "uvicorn main:app --host 0.0.0.0 --port ${PORT}"
