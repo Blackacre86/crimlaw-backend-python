@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -21,10 +20,14 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Criminal Law Document Processor")
 
-# Configure CORS for Lovable frontend
+# Configure CORS for Lovable frontend (specific origins for security)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure with your Lovable app URL in production
+    allow_origins=[
+        "https://preview--crimlaw-navigator-ma.lovable.app",  # Preview version
+        "https://crimlaw-navigator-ma.lovable.app",  # Published version
+        "http://localhost:5173"  # Local dev testing
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
