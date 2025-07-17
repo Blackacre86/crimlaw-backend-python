@@ -1,3 +1,4 @@
+import os, sys; print("DEBUG ENV →", os.getenv("SUPABASE_URL"), bool(os.getenv("SUPABASE_KEY")), file=sys.stderr)
 from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
