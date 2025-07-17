@@ -5,4 +5,4 @@ cmds = [
 ]
 
 [start]
-cmd = "uvicorn main:app --host 0.0.0.0 --port ${PORT}"
+cmds = ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "$PORT", "--log-level", "debug"]
